@@ -1,0 +1,7 @@
+-Mergesort + binary search thing O(meh)
+-bogo  O (even more)
+-swapping O(a lot)
+
+
+methods
+-is balanced
