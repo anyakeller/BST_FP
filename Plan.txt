@@ -13,6 +13,6 @@ methods
 
 
 TO DO
-<li>
-<td>asdfsad</td>
-</li>
+-Create TreeNode class CHECK
+-Create General Tree App class with main method
+-Create General Sorting class with all the different sorting algorithms.
