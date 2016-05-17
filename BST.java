@@ -199,7 +199,24 @@ public class BST<E extends Comparable>{
     }
 
     public static void main(String [] args){
-    	
+	BST<Integer> tree = new BST<Integer>();
+	int N = Integer.parseInt(args[0]);
+	for (int i = 0; i < N; i++){
+	    int r = (int) (Math.random() * 100);
+	    System.out.println("insert " + r);
+	    tree.insert(r);
+	}
+	
+	tree.inorder();
+	tree.preorder();
+	tree.postorder();
+	//System.out.println("Max value: " + tree.maxValue());
+	while (!tree.isEmpty()){
+	    Integer max = tree.maxValue();
+	    System.out.println("max : " + max);
+	    tree.remove(max);
+	    tree.inorder();
+	}    	
     }
 
 }
