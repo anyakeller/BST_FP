@@ -16,3 +16,15 @@ TO DO
 -Create TreeNode class CHECK
 -Create General Tree App class with main method
 -Create General Sorting class with all the different sorting algorithms.
+
+
+General method header:
+
+/*  
+Precondition:   <Insert Precondition here>
+                <Sometimes the conditions will extend multiple lines>
+Postcondition:  <Insert Postcondition here>
+                <Sometimes the conditions will extend multiple lines>
+Runtime:        O(x) //The WORST case scenario for the runtime
+Memory:         O(x) //The WORST case scenario for the extra memory usage
+*/
