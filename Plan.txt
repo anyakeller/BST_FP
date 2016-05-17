@@ -9,3 +9,10 @@ Initialization
 methods
 -is balanced
 -print method with graphic aspect
+
+
+
+TO DO
+<li>
+<td>asdfsad</td>
+</li>
