@@ -25,7 +25,10 @@ public class BST<E extends Comparable>{
     public int size() {
     	return _size;
     }
-    
+	
+	public TreeNode getRoot(){
+		return _root;
+	}    
 
     // post: return null if x not found
     public TreeNode<E> findR(E x){

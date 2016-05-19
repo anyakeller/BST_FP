@@ -1,0 +1,6 @@
+To clean up OOPS, delete:
+1. KeyInteractor
+2. LayoutPanel
+3. Any method that lets user choose what dp to put things in (unless
+used internally). 
+4. any other method that's never called.
