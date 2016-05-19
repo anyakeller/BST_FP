@@ -9,9 +9,13 @@ public class Treeify extends Frame {
 	//pre: 
 	//post: prints 
 	public static void tree(BST<Integer> b){
+		Rectangle title = new Rectangle(200,0);
+		title.setSize(300,20);
+		title.setColor(java.awt.Color.BLACK);		
+
 		String ans = "";
 		ans += b.getRoot().getValue() + "";
-		Value root = new Value(b._root);		
+		Value root = new Value(b.getRoot());		
 		
 	}
 
