@@ -17,7 +17,8 @@ public class VisualTree<E> extends Frame {
 		String ans = "";
 		ans += b.getRoot().getValue() + "";
 		VisualNode root = new VisualNode(b.getRoot());		
-		TextBox box = new TextBox(200,400,"B");		
+		TextBox box1 = new TextBox(50,200,"ABCDEFGHIJKLMOPQRSTUVWXYZ");		
+		//TextBox box2 = new TextBox(200,500,"NOPQRSTUVWXYZ");		
 	}
 
 	public static void main(String[] args){	
