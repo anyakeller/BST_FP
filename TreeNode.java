@@ -50,6 +50,13 @@ public class TreeNode<E>{
     public String toString(){
 	return getValue() + "";
     }
+	
+	public int children(){ // if none, 0; if left, 1; if right, 2, if both, 3; 
+		int count = 0;
+		if (getLeft() != null) count +=1;
+		if (getRight() != null ) count +=2;
+		return count;
+	}
 
 
 }
