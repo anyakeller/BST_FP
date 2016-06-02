@@ -44,6 +44,7 @@ public class VisualTree<E> extends Frame {
 	public static void main(String[] args){	
 
 		BST b = new BST();
+
 		/*
 		b.insert("quinn");
 		b.insert("is");
@@ -62,6 +63,7 @@ public class VisualTree<E> extends Frame {
 		b.insert(1);
 		b.balance();	
 		b.preorder();
+		
 		VisualTree t = new VisualTree();
 		t.tree(b);
 	}
