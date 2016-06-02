@@ -52,7 +52,7 @@ public class TextBox extends Rectangle{
 		//System.out.println(width);
 		
 		this.setSize(width,20);
-        this.setColor(java.awt.Color.RED);
+        this.setColor(java.awt.Color.CYAN);
 		
 		Point poop = new Point(x-(width/2),y-30);
 
