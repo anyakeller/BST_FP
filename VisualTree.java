@@ -44,6 +44,12 @@ public class VisualTree<E> extends Frame {
 	public static void main(String[] args){	
 
 		BST b = new BST();
+		/*
+		b.insert("quinn");
+		b.insert("is");
+		b.insert("a");
+		b.insert("poop");
+		*/
 		b.insert(10);
 		b.insert(5);
 		b.insert(9);
