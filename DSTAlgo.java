@@ -2,6 +2,18 @@ import java.lang.Math;
 import java.util.*;
 
 public class DSTAlgo<E>{
+	public TreeNode<E> rotateLeft(TreeNode<E> x){
+		if (x.getRigth() != null){
+			TreeNode<E> right = n.getRight();
+			n.setRight(right.getRight());
+			right.setRight(right.getLeft());
+			right.setleft(x.getLeft());
+			x.setLeft(right);
+		}
+		return x;
+	}	
+	
+	
     public TreeNode<E> rotateRight(TreeNode<E> x){
 	if (x.getLeft() != null){
 	    TreeNode<E> left = x.getLeft();
