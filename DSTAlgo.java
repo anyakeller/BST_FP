@@ -4,8 +4,8 @@ import java.util.*;
 public class DSTAlgo<E>{
 	public TreeNode<E> rotateLeft(TreeNode<E> x){
 		if (x.getRigth() != null){
-			TreeNode<E> right = n.getRight();
-			n.setRight(right.getRight());
+			TreeNode<E> right = x.getRight();
+			x.setRight(right.getRight());
 			right.setRight(right.getLeft());
 			right.setleft(x.getLeft());
 			x.setLeft(right);
