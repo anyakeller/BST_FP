@@ -17,8 +17,8 @@ public class DSTAlgo<E>{
 	while(rt.getLeft() != null){
 	    rt = rotateRight(rt);
 	}
-	if (rt.getRigth() != null)
-	    root.setRigth(makeRightVine(rt.getRight()));
+	if (rt.getRight() != null)
+	    root.setRight(makeRightVine(rt.getRight()));
 	return rt;
     }
   
