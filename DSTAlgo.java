@@ -34,13 +34,13 @@ public class DSTAlgo<E>{
     }
   
     public TreeNode<E> balanceNodes(TreeNode<E> rt, int nc){ //nc = node count
-	int t = (int)Math.Log(nc,2);
+	int t = (int)(Math.log((double)nc)/(Math.log((double)2)));
 	TreeNode<E> newRt = rt;
 	for (int i = 0; i < t; i++){
 	    newRt = rotateLeft(newRt);
 	    rt = newRt.getRight();
 	    for (int j = 0; j< nc / 2 - 1; j++){
-		rt = rotateLeft(rt);
+		rt = rotateRight(rt);
 		rt = rt.getRight();
 	    }
 	    nc >>= 1;
