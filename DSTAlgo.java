@@ -6,19 +6,19 @@ public class DSTAlgo<E>{
 	if (x.getLeft() != null){
 	    TreeNode<E> left = x.getLeft();
 	    x.setLeft(left.getLeft());
-	    left.getLeft() = left.getRight();
-	    left.getRight() = x.getRigth();
-	    x.getRight() = left;
+	    left.setLeft(left.getRight());
+	    left.setRight(x.getRight());
+	    x.setRight(left);
 	}
 	return x;
     }
   
     public TreeNode<E> makeRightVine(TreeNode<E> rt){
 	while(rt.getLeft() != null){
-	    rt = rotateLeft(rt);
+	    rt = rotateRight(rt);
 	}
 	if (rt.getRigth() != null)
-	    root.getRigth() = makeRightVine(rt.getRight());
+	    root.setRigth(makeRightVine(rt.getRight()));
 	return rt;
     }
   
