@@ -52,7 +52,7 @@ public class DSTAlgo<E>{
 	    newRt = rotateLeft(newRt);
 	    rt = newRt.getRight();
 	    for (int j = 0; j< nc / 2 - 1; j++){
-		rt = rotateRight(rt);
+		rt = rotateLeft(rt);
 		rt = rt.getRight();
 	    }
 	    nc >>= 1;
