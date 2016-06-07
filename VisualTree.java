@@ -61,7 +61,15 @@ public class VisualTree<E> extends Frame {
 		b.insert(3);
 		b.insert(2);
 		b.insert(1);
-		b.balance();	
+		
+		b.balance();
+		
+		/*
+		//DST
+		int nc = b.nodeCount(b.rt());
+		b.balanceNodes(b.rt(), nc);
+		*/
+		
 		b.preorder();
 		
 		VisualTree t = new VisualTree();

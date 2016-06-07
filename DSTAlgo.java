@@ -34,7 +34,7 @@ public class DSTAlgo<E>{
 		return rt;
 	}
 
-	public int nodeCount(TreeNode<E> rt){
+	public static int nodeCount(TreeNode<E> rt){
 		if (rt == null)
 			return 0;
 		int x = 1;
@@ -45,7 +45,7 @@ public class DSTAlgo<E>{
 		return x;
 	}
 
-	public TreeNode<E> balanceNodes(TreeNode<E> rt, int nc){ //nc = node count
+	public static reeNode<E> balanceNodes(TreeNode<E> rt, int nc){ //nc = node count
 		int t = (int)(Math.log((double)nc)/(Math.log((double)2)));
 		TreeNode<E> newRt = rt;
 		for (int i = 0; i < t; i++){
