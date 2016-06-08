@@ -1,81 +1,79 @@
+import java.util.ArrayList;
+
 public class TreeRun {
 
 	//Instance Variables
-	String[] _commands;
+	ArrayList<TreeNode<Object>> _trees;
+	ArrayList<String> _names;
 
-	//constructor
 	public TreeRun() {
-		_commands = {"exit", "cmdlist", "help", "trees", "deltree", "crtree", "edtree", "prtree", "rm", "add", "togglebalstate", "rename", "converttype", "rmrow", "rmleaves", "addrandom"};
-
-	public static boolean checkCommand(String[] cmd) {
-		for (int i = 0; i < _commands.length; i++) if (cmd[0].equals(_commands[i])) return true;
-		return false;
+		_trees = new ArrayList<TreeNode<Object>>();
+		_names = new ArrayList<String>();
 	}
 
-	public static void runTime() {
-		System.out.println("Self-Balancing Binary Search Tree v1.0");
+	public void runTime() {
+
+		//Here is the opening thingy
+		System.out.println("Self-Balancing Binary Search Tree v1.2");
 		System.out.println("By Anya Keller, Constantine Athanitis, and Quinn Dibble");
-		System.out.println("For a list of commands, type the command \"cmdlist\" at any time");
+		System.out.println("For help, type the command \"help\"");
+		System.out.println("For a list of commands, type the command \"cmdlist\"");
 		System.out.println("To exit the program, type the command \"exit\"");
-		System.out.print("Enter a command:\t ");
-		String rawcmd = StdIn.readString();
-		Boolean exit = false;
-		while (true) { //infinite loop, the exit command will break it
-			String[] cmd = rawcmd.split(" ");
-			//checks if the command is valid, if it is then find the proper command to execute, otherwise it whines at the user
-			if (checkCommand(cmd)) {
 
-				/* This condition will exit the program, is always called first */
-				if (cmd[0].equals("exit")) {
-					System.out.print("Are you sure you want to exit? (y/n):\t");
+		//controls the while loop, the exit command will end the loop.
+		boolean loopAgain = true;
+		
+		//while loop, that keeps running until the user exits the program
+		while (loopAgain) {
+
+			//String cmd is the user inputted command
+			//there will be no parameters for the command,
+			//rather the user will be prompted to enter all of the necessary thingies
+			System.out.print("Enter a command:  ");
+			String cmd = StdIn.readString();
+			
+			//handles the exit command
+			if (cmd.equals("exit")) {
+				while (true) {
+					System.out.print("Are you sure you want to exit? (y/n)  ");
 					String confirm = StdIn.readString();
-					while (true) {
-						if (confirm.equals("y")) {
-							//somehow exit the program
-							exit = true;
-							break;
-						}
-						else if (confirm.equals("n")) {
-							//go back to asking for a command
-							break;
-						}
-						else {
-							System.out.println();
-							System.out.println("Command not recognised.\nAre you sure you want to exit? (y/n):\t");
-							confirm = StdIn.readString();
-						}
+					if (confirm.equals("y")) {
+						loopAgain = false;
+						break;
 					}
-				} //end of the exit command
+					else if (confirm.equals("n"))
+						break;
+					else System.out.println("Command not recognized");
+				}
+			}
+			
+			//handles the cmdlist command
+			else if (cmd.equals("cmdlist")) {
 
+				//these are all the commands
+				//modify this as commands are added
+				System.out.println("Commands: cmdlist, exit, help");
+			}
 
+			else if (cmd.equals("help")) {
+				System.out.println("~~~~~~~~~~~~~~~~~~~~~");
+				System.out.println("BST Application Help:");
+				System.out.println("~~~~~~~~~~~~~~~~~~~~~");
+				System.out.println("cmdlist\t:\tlists all available commands");
+				System.out.println("exit\t:\tprompts the user if they would like to exit the application");
+				System.out.println("help\t:\tdisplays a list of all the commands and their usage");
+			}
 
-			} //end of the command runtime
-
-			/*
-			here is going to be where the commands are going to be executed,
-			using a lot of if statements to check if a command is valid.
-
-			Temp command list:
-
-			exit					prompts the user if they want to exit the program, they respond with y/n
-			cmdlist					displays all the available commands to the user
-			trees					shows all current created trees
-			deltree					prompts the user with a list of current trees, asking which one to delete.
-									If there are no trees available, the program will not run the command
-									if there the user inputs an invalid treename, the program will be angry
-			crtree <treename>		starts the procedure to create a new tree, with prompts for things such as
-									type, etc.
-			edtree					Prompts the user with a list of trees they are able to edit
-			*/
-			/* standard format for the conditions for calling a command 
-			else if (cmd[0].equals(<commandname>)) {
-				<execute command here>;
+			//none of the commands are recognized
+			else {
+				System.out.println("Command not recognized");
 			}
 		}
-
 	}
 
 	public static void main(String[] args) {
-		
+		TreeRun n = new TreeRun();
+		n.runTime();
 	}
 }
+
