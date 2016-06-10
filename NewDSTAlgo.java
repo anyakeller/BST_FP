@@ -6,26 +6,26 @@ public class NewDSTAlgo{
   
   private void dsw() {
     TreeNode newRoot = new TreeNode(null, null);
-    newRoot.right = root;
+    newRoot.setRight(_root);
     treeToVine(newRoot);
     vineToTree(newRoot, numberOfElements);
-    this.root = newRoot.right;
+    _root = newRoot.getRight();
   }
   
   private void treeToVine(TreeNode root) {
     TreeNode tail = root;
-    TreeNode rest = tail.right;
+    TreeNode rest = tail.getRight();
     
     while (rest != null) {
-      if (rest.left == null) {
+      if (rest.getLeft()== null) {
         tail = rest;
-        rest = rest.right;
+        rest = rest.getRigth();
       } else {
-        TreeNode temp = rest.left;
-        rest.left = temp.right;
-        temp.right = rest;
+        TreeNode temp = rest.getLeft();
+        rest.setLeft(temp.getRight());
+        temp.setRight(rest);
         rest = temp;
-        tail.right = temp;
+        tail.setRight(temp);
       }
     }
   }
@@ -33,11 +33,11 @@ public class NewDSTAlgo{
   private void compress(TreeNode root, int count) {
     TreeNode scanner = root;
     for (int i = 0; i < count; i++) {
-      TreeNode child = scanner.right;
-      scanner.right = child.right;
-      scanner = scanner.right;
-      child.right = scanner.left;
-      scanner.left = child;
+      TreeNode child = scanner.getRight();
+      scanner.setRight(child.getRight());
+      scanner = scanner.getRight();
+      child.setRight(scanner.getLeft());
+      scanner.setLeft(child);
     }
   }
   

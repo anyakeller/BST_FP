@@ -64,11 +64,11 @@ public class VisualTree<E> extends Frame {
 		
 		b.balance();
 		
-		/*
+		
 		//DST
-		int nc = b.nodeCount(b.rt());
-		b.balanceNodes(b.rt(), nc);
-		*/
+		
+		//b.makeComplete();
+		
 		
 		b.preorder();
 		
